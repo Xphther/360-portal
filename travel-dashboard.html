@@ -152,14 +152,37 @@ table.innerHTML += `
 <td>${req.toLocation}</td>
 <td>${req.travelType}</td>
 <td class="pending">${req.status}</td>
+
 <td>${req.pendingWith || "-"}</td>
+
 <td>
+${req.ticket ?
+`<a href="#">View Ticket</a>` : "-"}
+</td>
+
+<td>
+${req.hotelVoucher ?
+`<a href="#">View Voucher</a>` : "-"}
+</td>
+
+<td>
+
+${req.pendingWith === "Nitin Pathak" ? `
 <button onclick="approveRequest(${index})">
-Manager Approve
+Approve
 </button>
+
 <button onclick="mdApprove(${index})">
-MD Approve
+MD Approval
 </button>
+` : ''}
+
+${req.pendingWith === "Admin Team" ? `
+<button onclick="completeBooking(${index})">
+Complete Booking
+</button>
+` : ''}
+
 </td>
 </tr>
 `;
