@@ -113,6 +113,8 @@ font-weight:bold;
 <th>From</th>
 <th>To</th>
 <th>Travel Type</th>
+<th>Cost Center</th>
+<th>Cost Booking</th>
 <th>Status</th>
 <th>Pending With</th>
 <th>Ticket</th>
@@ -139,7 +141,7 @@ if(requests.length === 0){
 
 table.innerHTML = `
 <tr>
-<td colspan="10" class="no-data">
+<td colspan="11" class="no-data">
 No Travel Requests Found
 </td>
 </tr>
@@ -156,20 +158,19 @@ table.innerHTML += `
 <td>${req.fromLocation}</td>
 <td>${req.toLocation}</td>
 <td>${req.travelType}</td>
+<td>${req.costCenter || "-"}</td>
+<td>${req.costBooking || "-"}</td>
+
 <td class="${req.status === 'Completed' ? 'completed' : 'pending'}">
 ${req.status}
 </td>
 
-<td>${req.pendingWith || "-"}</td>
-
 <td>
-${req.ticket ?
-`<a href="#">View Ticket</a>` : "-"}
+${req.ticket ? `<a href="#">View Ticket</a>` : "-"}
 </td>
 
 <td>
-${req.hotelVoucher ?
-`<a href="#">View Voucher</a>` : "-"}
+${req.hotelVoucher ? `<a href="#">View Voucher</a>` : "-"}
 </td>
 
 <td>
