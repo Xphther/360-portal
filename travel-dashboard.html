@@ -83,6 +83,11 @@ transition:.3s;
 text-align:center;
 padding:30px;
 }
+.completed{
+color:#2e7d32;
+font-weight:bold;
+}
+  
 
 </style>
 
@@ -134,7 +139,7 @@ if(requests.length === 0){
 
 table.innerHTML = `
 <tr>
-<td colspan="8" class="no-data">
+<td colspan="10" class="no-data">
 No Travel Requests Found
 </td>
 </tr>
@@ -151,7 +156,9 @@ table.innerHTML += `
 <td>${req.fromLocation}</td>
 <td>${req.toLocation}</td>
 <td>${req.travelType}</td>
-<td class="pending">${req.status}</td>
+<td class="${req.status === 'Completed' ? 'completed' : 'pending'}">
+${req.status}
+</td>
 
 <td>${req.pendingWith || "-"}</td>
 
@@ -196,16 +203,7 @@ function approveRequest(index){
 const requests =
 JSON.parse(localStorage.getItem("travelRequests")) || [];
 
-if(requests[index].pendingWith === "Reporting Manager"){
-
 requests[index].pendingWith = "Admin Team";
-
-}else{
-
-requests[index].status = "Approved";
-requests[index].pendingWith = "Completed";
-
-}
 
 localStorage.setItem(
 "travelRequests",
@@ -221,6 +219,39 @@ const requests =
 JSON.parse(localStorage.getItem("travelRequests")) || [];
 
 requests[index].pendingWith = "Admin Team";
+
+localStorage.setItem(
+"travelRequests",
+JSON.stringify(requests)
+);
+
+location.reload();
+
+}
+
+function completeBooking(index){
+
+const ticket =
+prompt("Enter Ticket Number");
+
+if(!ticket){
+
+alert("Ticket is Mandatory");
+return;
+
+}
+
+const voucher =
+prompt("Enter Hotel Voucher Number (Optional)");
+
+const requests =
+JSON.parse(localStorage.getItem("travelRequests")) || [];
+
+requests[index].ticket = ticket;
+requests[index].hotelVoucher = voucher || "";
+
+requests[index].status = "Completed";
+requests[index].pendingWith = "Completed";
 
 localStorage.setItem(
 "travelRequests",
