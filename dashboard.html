@@ -893,7 +893,7 @@ padding:25px;
 width:300px;
 border-radius:15px;
 box-shadow:0 5px 20px rgba(0,0,0,.08);
-min-height:220px;
+min-height:180px;
 }
 
 .card h2{
@@ -1024,7 +1024,14 @@ font-weight:500;
 <main class="main">
 
 <header class="page-header">
+
+<div>
 <h1>Welcome, Amit Sharma</h1>
+<p style="color:#666;">
+Operations Department | Mumbai
+</p>
+</div>
+
 <div class="notification-bell">
 🔔 <span class="badge">3</span>
 </div>
@@ -1033,7 +1040,35 @@ font-weight:500;
 
 <section class="content">
 
-<h2 style="margin-bottom:20px;">Travel</h2>
+<div class="module-cards">
+
+<div class="card">
+<h2>My Requests</h2>
+<h1 style="color:#002b7f;">5</h1>
+<p>Total Travel Requests</p>
+</div>
+
+<div class="card">
+<h2>Pending</h2>
+<h1 style="color:orange;">1</h1>
+<p>Awaiting Approval</p>
+</div>
+
+<div class="card">
+<h2>Approved</h2>
+<h1 style="color:green;">3</h1>
+<p>Ready for Booking</p>
+</div>
+
+<div class="card">
+<h2>Completed</h2>
+<h1 style="color:#002b7f;">1</h1>
+<p>Trips Completed</p>
+</div>
+
+</div>
+
+<h2 style="margin:30px 0 20px;color:#002b7f;">Travel</h2>
     
 <div class="quick-actions">
 <div class="action-item"
@@ -1093,7 +1128,11 @@ Open Expenses
 <div class="card">
 <h2>My Notifications</h2>
 
-<ul style="line-height:2;">
+<ul style="
+line-height:1.8;
+padding-left:18px;
+font-size:14px;
+">
 <li>⏳ Request FM-2026-0004 Pending with Nitin Pathak</li>
 <li>✅ Request FM-2026-0002 Approved</li>
 <li>✈ Ticket Uploaded for FM-2026-0001</li>
@@ -1130,6 +1169,7 @@ Open Expenses
 <p>✈ Travel Request Submitted</p>
 <p>✅ Request Approved</p>
 <p>🏨 Hotel Voucher Uploaded</p>
+</div>
 
 <div class="card">
 <h2>Quick Links</h2>
@@ -1138,8 +1178,8 @@ Open Expenses
 <p>💳 Expense Claim Form</p>
 <p>📞 Contact Travel Desk</p>
 <p>🏨 Preferred Hotels</p>
-
 </div>
+    
 </div>
 </div> <!-- module-cards -->
 </section>
