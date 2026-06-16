@@ -178,12 +178,11 @@ transform:rotate(180deg);
 
 .subnav{
 display:none;
-padding:0 15px 4px;
+padding-left:20px;
 }
 
 .nav-group.open .subnav{
 display:block;
-animation:reveal .2s ease-out;
 }
 
 .subnav a{
@@ -896,7 +895,7 @@ cursor:pointer;
 <div class="app">
 <aside class="sidebar">
 <div class="brand">
-<img src="LOGO.jpg" alt="FM Logistic">
+    <img src="LOGO.jpg" alt="FM Logistic">
 </div>
 
 <nav>
@@ -905,14 +904,18 @@ cursor:pointer;
 </a>
 
 <div class="nav-group">
+
 <button class="nav-toggle" type="button">
-<span class="nav-icon">&#10003;</span><span class="nav-label">Approvals</span>
+<span class="nav-icon">&#10003;</span>
+<span class="nav-label">Approvals</span>
 <span class="chevron">&#8964;</span>
 </button>
+
 <div class="subnav">
 <a href="approval.html">Approval Queue</a>
 <a href="invoice-review.html">Invoice Review</a>
 </div>
+
 </div>
 
 <div class="nav-group">
@@ -982,10 +985,6 @@ Open Travel
 <h2>Purchase Requests</h2>
 <p>Create and manage purchase requests.</p>
 
-<div class="card">
-<h2>Purchase Requests</h2>
-<p>Create and manage purchase requests.</p>
-
 <button onclick="window.location.href='purchase-request.html'">
 Open Purchase
 </button>
@@ -1004,6 +1003,18 @@ Open Expenses
 </section>
 </main>
 </div>
+<script>
 
+document.querySelectorAll(".nav-toggle").forEach(button => {
+
+button.addEventListener("click", () => {
+
+button.parentElement.classList.toggle("open");
+
+});
+
+});
+
+</script>
 </body>
 </html>
