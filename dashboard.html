@@ -4,7 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FM Logistic Portal</title>
+
+
 <style>
+
+.page-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.notification-bell{
+position:relative;
+font-size:28px;
+cursor:pointer;
+padding:10px;
+background:white;
+border-radius:50%;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+    
 :root{
 --red:#ef2b2d;
 --red-dark:#d91f21;
@@ -873,6 +893,7 @@ padding:25px;
 width:300px;
 border-radius:15px;
 box-shadow:0 5px 20px rgba(0,0,0,.08);
+min-height:220px;
 }
 
 .card h2{
@@ -889,7 +910,44 @@ padding:10px 20px;
 border-radius:8px;
 cursor:pointer;
 }
+.quick-actions{
+display:flex;
+gap:30px;
+margin:20px 0 40px;
+flex-wrap:wrap;
+}
+
+.action-item{
+text-align:center;
+cursor:pointer;
+}
+
+.circle-btn{
+width:80px;
+height:80px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#ef2b2d;
+color:white;
+font-size:32px;
+margin:auto;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.circle-btn:hover{
+transform:translateY(-5px);
+}
+
+.action-item p{
+margin-top:10px;
+font-size:14px;
+font-weight:500;
+}
 </style>
+
 </head>
 <body>
 <div class="app">
@@ -966,10 +1024,44 @@ cursor:pointer;
 <main class="main">
 
 <header class="page-header">
-<h1>Welcome</h1>
+<h1>Welcome, Amit Sharma</h1>
+<div class="notification-bell">
+🔔 <span class="badge">3</span>
+</div>
+
 </header>
 
 <section class="content">
+
+<h2 style="margin-bottom:20px;">Travel</h2>
+    
+<div class="quick-actions">
+<div class="action-item"
+onclick="window.location.href='travel-request.html'">
+<div class="circle-btn">+</div>
+<p>New Travel Request</p>
+</div>
+
+<div class="action-item"
+onclick="window.location.href='travel-dashboard.html'">
+<div class="circle-btn">✈</div>
+<p>Flights</p>
+</div>
+
+<div class="action-item"
+onclick="window.location.href='travel-dashboard.html'">
+<div class="circle-btn">🚆</div>
+<p>Trains</p>
+</div>
+
+<div class="action-item"
+onclick="window.location.href='travel-dashboard.html'">
+<div class="circle-btn">🚌</div>
+<p>Bus</p>
+</div>
+
+</div> <!-- quick-actions -->
+
 
 <div class="module-cards">
 
@@ -1018,6 +1110,37 @@ Open Expenses
 <p>Completed : 1</p>
 </div>
 
+<div class="card">
+<h2>Upcoming Trips</h2>
+
+<p>📍 Mumbai → Pune</p>
+<p>📅 15 Aug 2026</p>
+<p>Status: Approved</p>
+
+</div>
+<div class="card">
+<h2>My Approvals</h2>
+<p>Pending Approvals : 1</p>
+<p>Manager Approved : 3</p>
+<p>MD Approved : 2</p>
+</div>
+
+<div class="card">
+<h2>Recent Activity</h2>
+<p>✈ Travel Request Submitted</p>
+<p>✅ Request Approved</p>
+<p>🏨 Hotel Voucher Uploaded</p>
+
+<div class="card">
+<h2>Quick Links</h2>
+
+<p>📄 Download Travel Policy</p>
+<p>💳 Expense Claim Form</p>
+<p>📞 Contact Travel Desk</p>
+<p>🏨 Preferred Hotels</p>
+
+</div>
+</div>
 </div> <!-- module-cards -->
 </section>
 </main>
