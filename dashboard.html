@@ -8,14 +8,18 @@
 
 <style>
 
-.notification-bell{
-position:relative;
-font-size:28px;
-cursor:pointer;
-padding:10px;
-background:white;
-border-radius:50%;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
+.notification-panel{
+display:none;
+position:fixed;
+top:75px;
+right:30px;
+width:300px;
+background:#fff;
+padding:15px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+z-index:99999;
+border:1px solid #e5e7eb;
 }
     
 :root{
@@ -265,7 +269,25 @@ background:#f6f7f9;
 box-shadow:0 5px 16px rgba(0,0,0,.1);
 transform:translateY(-2px);
 }
-
+.notification-panel{
+display:none;
+position:fixed;
+top:70px;
+right:20px;
+width:280px;
+background:white;
+padding:15px;
+border-radius:12px;
+box-shadow:0 8px 25px rgba(0,0,0,.15);
+z-index:9999;
+}
+.notification-bell:hover{
+background:#f5f7fb;
+}
+.notification-panel p{
+padding:10px 0;
+border-bottom:1px solid #eee;
+}
 .assistant-button{
 box-shadow:0 0 18px rgba(130,90,220,.28);
 }
@@ -620,7 +642,7 @@ color:#fff;
 }
 
 .content{
-padding:0 25px 35px;
+padding:40px 25px 35px;
 }
 .create-button{
 display:inline-flex;
@@ -1061,8 +1083,14 @@ Operations Department | Mumbai
 </p>
 </div>
 
-<div class="notification-bell">
+<div class="notification-bell" onclick="toggleNotifications()">
 🔔 <span class="badge">3</span>
+</div>
+
+<div id="notificationPanel" class="notification-panel">
+<p>✈ Travel Request Approved</p>
+<p>🏨 Hotel Voucher Uploaded</p>
+<p>💳 Expense Claim Approved</p>
 </div>
 
 </header>
@@ -1183,6 +1211,18 @@ button.parentElement.classList.toggle("open");
 });
 
 });
+
+function toggleNotifications(){
+
+const panel=document.getElementById("notificationPanel");
+
+if(panel.style.display==="block"){
+panel.style.display="none";
+}else{
+panel.style.display="block";
+}
+
+}
 
 </script>
 </body>
