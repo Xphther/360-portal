@@ -905,7 +905,8 @@ margin-bottom:12px;
 .card{
 background:white;
 padding:20px;
-width:260px;
+flex:1;
+min-width:240px;
 border-radius:15px;
 box-shadow:0 5px 20px rgba(0,0,0,.08);
 }   
@@ -1153,7 +1154,9 @@ Operations Department | Mumbai
 
 </div>
 
-<h2 style="margin:0 0 20px;color:#002b7f;">Travel</h2>
+<h2 style="margin:10px 0 20px;color:#002b7f;">
+Travel Management
+</h2>
     
 <div class="quick-actions">
 <div class="action-item"
@@ -1224,7 +1227,7 @@ Open Expenses
 <p>📞 +91 98765 43210</p>
 <p>✉ traveldesk@fmlogistic.com</p>
 
-<button>
+<button onclick="window.location.href='mailto:traveldesk@fmlogistic.com'">
 Contact Desk
 </button>
 
@@ -1248,7 +1251,7 @@ Contact Desk
 💳 Expenses
 </button>
 
-<button>
+<button onclick="window.location.href='travel-policy.html'">
 📄 Policy
 </button>
 
@@ -1282,6 +1285,20 @@ panel.style.display="block";
 }
 
 }
+
+document.addEventListener("click", function(e){
+
+const bell=document.querySelector(".notification-bell");
+const panel=document.getElementById("notificationPanel");
+
+if(
+!bell.contains(e.target) &&
+!panel.contains(e.target)
+){
+panel.style.display="none";
+}
+
+});
 
 </script>
 </body>
