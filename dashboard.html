@@ -901,15 +901,27 @@ margin-bottom:10px;
 color:#002b7f;
 }
 
-.card button{
+.module-cards > .card > button{
 margin-top:15px;
-background:#002b7f;
-color:white;
-border:none;
+background:#eef4ff;
+color:#002b7f;
+border:1px solid #d8e4ff;
 padding:10px 20px;
-border-radius:8px;
+border-radius:10px;
 cursor:pointer;
+font-weight:600;
+transition:.3s;
 }
+
+.module-cards > .card > button:hover{
+background:#dbe9ff;
+transform:translateY(-2px);
+}
+
+.shortcut-grid button:hover{
+background:#dbe9ff;
+}
+    
 .quick-actions{
 display:flex;
 gap:30px;
@@ -967,7 +979,6 @@ font-weight:600;
 cursor:pointer;
 transition:.3s;
 }
-
 .shortcut-grid button:hover{
 background:#dbe9ff;
 transform:translateY(-2px);
