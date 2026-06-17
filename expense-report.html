@@ -1,1 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expense Reports</title>
 
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f6f9;
+padding:30px;
+}
+
+h1{
+color:#002b7f;
+margin-bottom:5px;
+}
+
+.subtitle{
+color:#666;
+margin-bottom:25px;
+}
+
+.summary-cards{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+margin-bottom:25px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+min-width:220px;
+flex:1;
+}
+
+.card h3{
+font-size:14px;
+color:#666;
+margin-bottom:10px;
+}
+
+.card h2{
+color:#002b7f;
+}
+
+.table-card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+th{
+background:#002b7f;
+color:white;
+padding:12px;
+text-align:left;
+}
+
+td{
+padding:12px;
+border-bottom:1px solid #eee;
+}
+
+.status-approved{
+color:green;
+font-weight:600;
+}
+
+.status-pending{
+color:orange;
+font-weight:600;
+}
+
+.status-rejected{
+color:red;
+font-weight:600;
+}
+
+.export-btn{
+margin-top:20px;
+background:#002b7f;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+}
+
+.export-btn:hover{
+opacity:.9;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Expense Reports</h1>
+<p class="subtitle">
+View and track all submitted expense claims
+</p>
+
+<div class="summary-cards">
+
+<div class="card">
+<h3>Total Claims</h3>
+<h2>25</h2>
+</div>
+
+<div class="card">
+<h3>Approved</h3>
+<h2 style="color:green;">18</h2>
+</div>
+
+<div class="card">
+<h3>Pending</h3>
+<h2 style="color:orange;">5</h2>
+</div>
+
+<div class="card">
+<h3>Rejected</h3>
+<h2 style="color:red;">2</h2>
+</div>
+
+</div>
+
+<div class="table-card">
+
+<h2 style="color:#002b7f;">
+Expense Claim History
+</h2>
+
+<table>
+
+<tr>
+<th>Claim ID</th>
+<th>Date</th>
+<th>Category</th>
+<th>Amount</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>EXP001</td>
+<td>15-Jun-2026</td>
+<td>Travel</td>
+<td>₹4,500</td>
+<td class="status-approved">Approved</td>
+</tr>
+
+<tr>
+<td>EXP002</td>
+<td>18-Jun-2026</td>
+<td>Hotel</td>
+<td>₹7,200</td>
+<td class="status-pending">Pending</td>
+</tr>
+
+<tr>
+<td>EXP003</td>
+<td>20-Jun-2026</td>
+<td>Meals</td>
+<td>₹1,250</td>
+<td class="status-rejected">Rejected</td>
+</tr>
+
+<tr>
+<td>EXP004</td>
+<td>22-Jun-2026</td>
+<td>Taxi</td>
+<td>₹850</td>
+<td class="status-approved">Approved</td>
+</tr>
+
+<tr>
+<td>EXP005</td>
+<td>25-Jun-2026</td>
+<td>Hotel</td>
+<td>₹5,600</td>
+<td class="status-pending">Pending</td>
+</tr>
+
+</table>
+
+<button class="export-btn">
+📄 Export Report
+</button>
+
+</div>
+
+</body>
+</html>
