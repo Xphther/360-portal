@@ -948,6 +948,30 @@ margin-top:10px;
 font-size:14px;
 font-weight:500;
 }
+
+.shortcut-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:15px;
+}
+
+.shortcut-grid button{
+width:100%;
+padding:12px;
+background:#eef4ff;
+color:#002b7f;
+border:1px solid #d8e4ff;
+border-radius:10px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.shortcut-grid button:hover{
+background:#dbe9ff;
+transform:translateY(-2px);
+}
 </style>
 
 </head>
@@ -1118,26 +1142,29 @@ Contact Desk
 </div>
 
 <div class="card">
-<h2>Quick Actions</h2>
+<h2>Employee Shortcuts</h2>
+
+<div class="shortcut-grid">
 
 <button onclick="window.location.href='travel-request.html'">
-New Travel Request
+✈ New Trip
 </button>
 
 <button onclick="window.location.href='travel-dashboard.html'">
-My Trips
+📋 My Trips
 </button>
 
 <button onclick="window.location.href='expense-dashboard.html'">
-Submit Expense
+💳 Expenses
 </button>
 
 <button>
-Travel Policy
+📄 Policy
 </button>
 
 </div>
 
+</div>
 </div> <!-- module-cards -->
 </section>
 </main>
