@@ -244,7 +244,19 @@ font-size:28px;
 font-weight:750;
 letter-spacing:-.5px;
 }
-
+.notification-bell{
+position:relative;
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+cursor:pointer;
+background:white;
+border-radius:50%;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
 .header-actions{
 display:flex;
 align-items:center;
@@ -282,17 +294,18 @@ box-shadow:0 0 18px rgba(130,90,220,.28);
 
 .badge{
 position:absolute;
-top:-2px;
-right:-2px;
+top:-3px;
+right:-3px;
 display:grid;
 place-items:center;
-min-width:17px;
-height:17px;
+min-width:16px;
+height:16px;
 padding:0 4px;
 border-radius:10px;
 background:var(--red);
 color:#fff;
-font-size:10px;
+font-size:9px;
+font-weight:600;
 }
 
 .notification-dropdown{
