@@ -909,7 +909,13 @@ flex:1;
 min-width:240px;
 border-radius:15px;
 box-shadow:0 5px 20px rgba(0,0,0,.08);
-}   
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
 
 .card h2{
 margin-bottom:10px;
@@ -1128,28 +1134,43 @@ Operations Department | Mumbai
 
 <div class="module-cards">
 
-<div class="card">
+<div class="card"
+onclick="window.location.href='travel-dashboard.html'"
+style="cursor:pointer;">
+
 <h2>Travel Requests</h2>
 <h1 style="color:#002b7f;">12</h1>
 <p>This Month</p>
+
 </div>
 
-<div class="card">
+<div class="card"
+onclick="window.location.href='expense-report.html'"
+style="cursor:pointer;">
+
 <h2>Expense Claims</h2>
 <h1 style="color:#28a745;">8</h1>
 <p>Submitted</p>
+
 </div>
 
-<div class="card">
+<div class="card"
+onclick="window.location.href='purchase-request.html'"
+style="cursor:pointer;">
+
 <h2>Purchase Requests</h2>
 <h1 style="color:#ff9800;">5</h1>
 <p>Open Requests</p>
-</div>
 
-<div class="card">
+</div>
+<div class="card"
+onclick="window.location.href='approval.html'"
+style="cursor:pointer;">
+
 <h2>Pending Approvals</h2>
 <h1 style="color:#ef2b2d;">3</h1>
 <p>Action Required</p>
+
 </div>
 
 </div>
