@@ -1118,8 +1118,24 @@ Operations Department | Mumbai
 </p>
 </div>
 
+<div style="display:flex;align-items:center;gap:10px;">
+
 <div class="notification-bell" onclick="toggleNotifications()">
 🔔 <span class="badge">3</span>
+</div>
+
+<button onclick="logout()"
+style="
+padding:8px 15px;
+background:#002b7f;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;">
+Logout
+</button>
+
 </div>
 
 <div id="notificationPanel" class="notification-panel">
@@ -1283,43 +1299,6 @@ Contact Desk
 </section>
 </main>
 </div>
-<script>
-
-document.querySelectorAll(".nav-toggle").forEach(button => {
-
-button.addEventListener("click", () => {
-
-button.parentElement.classList.toggle("open");
-
-});
-
-});
-
-function toggleNotifications(){
-
-const panel=document.getElementById("notificationPanel");
-
-if(panel.style.display==="block"){
-panel.style.display="none";
-}else{
-panel.style.display="block";
-}
-
-}
-
-document.addEventListener("click", function(e){
-
-const bell=document.querySelector(".notification-bell");
-const panel=document.getElementById("notificationPanel");
-
-if(
-!bell.contains(e.target) &&
-!panel.contains(e.target)
-){
-panel.style.display="none";
-}
-
-});
 
 <script>
 
@@ -1360,8 +1339,6 @@ panel.style.display="none";
 });
 
 </script>
-
-<!-- PASTE FIREBASE CODE HERE -->
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 
