@@ -1321,6 +1321,84 @@ panel.style.display="none";
 
 });
 
+<script>
+
+document.querySelectorAll(".nav-toggle").forEach(button => {
+
+button.addEventListener("click", () => {
+
+button.parentElement.classList.toggle("open");
+
+});
+
+});
+
+function toggleNotifications(){
+
+const panel=document.getElementById("notificationPanel");
+
+if(panel.style.display==="block"){
+panel.style.display="none";
+}else{
+panel.style.display="block";
+}
+
+}
+
+document.addEventListener("click", function(e){
+
+const bell=document.querySelector(".notification-bell");
+const panel=document.getElementById("notificationPanel");
+
+if(
+!bell.contains(e.target) &&
+!panel.contains(e.target)
+){
+panel.style.display="none";
+}
+
+});
+
 </script>
+
+<!-- PASTE FIREBASE CODE HERE -->
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script>
+
+const firebaseConfig = {
+apiKey:"AIzaSyDghYujwS8c8g-wolAklzLufF_j2qzEyDc",
+authDomain:"xphther.firebaseapp.com",
+projectId:"xphther",
+storageBucket:"xphther.firebasestorage.app",
+messagingSenderId:"771665767472",
+appId:"1:771665767472:web:a1a857d5589de4c38a51f5"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+firebase.auth().onAuthStateChanged(function(user){
+
+if(!user){
+window.location.href="login.html";
+}
+
+});
+
+function logout(){
+
+firebase.auth().signOut().then(function(){
+
+window.location.href="login.html";
+
+});
+
+}
+
+</script>
+
 </body>
 </html>
