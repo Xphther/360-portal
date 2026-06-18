@@ -1136,7 +1136,7 @@ Logout
 <header class="page-header">
 
 <div>
-<h1>Welcome, Amit Sharma</h1>
+<h1 id="welcomeUser">Welcome</h1>
 <p style="color:#666;">
 Operations Department | Mumbai
 </p>
@@ -1372,8 +1372,15 @@ firebase.initializeApp(firebaseConfig);
 firebase.auth().onAuthStateChanged(function(user){
 
 if(!user){
+
 window.location.href="login.html";
+
+return;
+
 }
+
+document.getElementById("welcomeUser").innerHTML =
+"Welcome, " + user.email;
 
 });
 
