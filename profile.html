@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Profile</title>
 
+<style>
+
+body{
+background:#eef4ff;
+font-family:'Segoe UI',sans-serif;
+padding:30px;
+}
+
+.card{
+background:white;
+max-width:700px;
+margin:auto;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+h1{
+color:#002b7f;
+margin-bottom:25px;
+}
+
+.profile-row{
+display:flex;
+justify-content:space-between;
+padding:15px 0;
+border-bottom:1px solid #eee;
+}
+
+.label{
+font-weight:600;
+color:#555;
+}
+
+.value{
+color:#002b7f;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>My Profile</h1>
+
+<div class="profile-row">
+<div class="label">Employee Name</div>
+<div class="value">Amit Sharma</div>
+</div>
+
+<div class="profile-row">
+<div class="label">Email</div>
+<div class="value" id="userEmail">Loading...</div>
+</div>
+
+<div class="profile-row">
+<div class="label">Department</div>
+<div class="value">Operations</div>
+</div>
+
+<div class="profile-row">
+<div class="label">Location</div>
+<div class="value">Mumbai</div>
+</div>
+
+</div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script>
+
+const firebaseConfig = {
+apiKey:"AIzaSyDghYujwS8c8g-wolAklzLufF_j2qzEyDc",
+authDomain:"xphther.firebaseapp.com",
+projectId:"xphther",
+storageBucket:"xphther.firebasestorage.app",
+messagingSenderId:"771665767472",
+appId:"1:771665767472:web:a1a857d5589de4c38a51f5"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+firebase.auth().onAuthStateChanged(function(user){
+
+if(!user){
+window.location.href="login.html";
+return;
+}
+
+document.getElementById("userEmail").innerHTML =
+user.email;
+
+});
+
+</script>
+</body>
+</html>
