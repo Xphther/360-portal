@@ -69,7 +69,81 @@ margin-bottom:5px;
 .upload-box small{
 color:#666;
 }
+.section-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:10px;
+}
 
+.section-header h2{
+margin:0;
+color:#002b7f;
+}
+
+.step-badge{
+background:#eef4ff;
+color:#002b7f;
+padding:8px 14px;
+border-radius:20px;
+font-size:13px;
+font-weight:600;
+}
+
+.section-desc{
+color:#666;
+margin-bottom:20px;
+}
+
+.receipt-status{
+display:flex;
+gap:15px;
+margin-top:20px;
+}
+
+.status-card{
+flex:1;
+background:#f8fbff;
+border:1px solid #d8e4ff;
+padding:15px;
+border-radius:10px;
+}
+
+.status-card span{
+display:block;
+font-size:12px;
+color:#666;
+margin-bottom:5px;
+}
+
+.status-card b{
+color:#002b7f;
+}
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.form-group{
+display:flex;
+flex-direction:column;
+}
+
+.form-group label{
+font-size:14px;
+font-weight:600;
+margin-bottom:8px;
+color:#555;
+}
+
+.form-group input,
+.form-group select{
+padding:12px;
+border:1px solid #d8e4ff;
+border-radius:8px;
+font-size:14px;
+}
 </style>
 </head>
 
@@ -87,7 +161,15 @@ color:#666;
 
 <div class="expense-card">
 
-<h2>📄 Upload Receipt</h2>
+<div class="section-header">
+<h2>Expense Receipt</h2>
+<span class="step-badge">Step 1 of 3</span>
+</div>
+
+<p class="section-desc">
+Upload your invoice, receipt or supporting document.
+OCR extraction will be performed automatically after upload.
+</p>
 
 <div class="upload-box">
 
@@ -95,7 +177,65 @@ color:#666;
 
 <p>Select Receipt / Invoice</p>
 
-<small>PDF, JPG, PNG (Max 10 MB)</small>
+<small>PDF, JPG, PNG (Maximum 10 MB)</small>
+
+</div>
+
+<div class="receipt-status">
+
+<div class="status-card">
+<span>Status</span>
+<b>No Receipt Uploaded</b>
+</div>
+
+<div class="status-card">
+<span>OCR Status</span>
+<b>Pending</b>
+</div>
+
+</div>
+
+</div>
+
+<div class="expense-card" style="margin-top:20px;">
+
+<div class="section-header">
+<h2>Expense Details</h2>
+<span class="step-badge">Step 2 of 3</span>
+</div>
+
+<p class="section-desc">
+Enter expense information for reimbursement processing.
+</p>
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Expense Type</label>
+<select>
+<option>Travel</option>
+<option>Hotel</option>
+<option>Meals</option>
+<option>Fuel</option>
+<option>Local Conveyance</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Expense Date</label>
+<input type="date">
+</div>
+
+<div class="form-group">
+<label>Amount</label>
+<input type="number" placeholder="Enter Amount">
+</div>
+
+<div class="form-group">
+<label>Vendor Name</label>
+<input type="text" placeholder="Enter Vendor Name">
+</div>
 
 </div>
 
