@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>New Expense Claim</title>
 
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#eef4ff;
+padding:30px;
+}
+
+.page-header{
+max-width:1000px;
+margin:auto;
+margin-bottom:25px;
+}
+
+.page-header h1{
+color:#002b7f;
+margin-bottom:5px;
+}
+
+.page-header p{
+color:#666;
+}
+
+.expense-container{
+max-width:1000px;
+margin:auto;
+}
+
+.expense-card{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.expense-card h2{
+color:#002b7f;
+margin-bottom:20px;
+}
+
+.upload-box{
+border:2px dashed #d8e4ff;
+background:#f8fbff;
+padding:50px;
+border-radius:12px;
+text-align:center;
+}
+
+.upload-box input{
+margin-bottom:15px;
+}
+
+.upload-box p{
+font-weight:600;
+margin-bottom:5px;
+}
+
+.upload-box small{
+color:#666;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page-header">
+
+<h1>New Expense Claim</h1>
+
+<p>Upload receipt and submit expense details</p>
+
+</div>
+
+<div class="expense-container">
+
+<div class="expense-card">
+
+<h2>📄 Upload Receipt</h2>
+
+<div class="upload-box">
+
+<input type="file" id="receiptUpload">
+
+<p>Select Receipt / Invoice</p>
+
+<small>PDF, JPG, PNG (Max 10 MB)</small>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
