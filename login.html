@@ -4,21 +4,28 @@
 <title>FM Portal Login</title>
 
 <style>
+
 body{
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
 background:#eef4ff;
-font-family:Segoe UI;
+font-family:'Segoe UI',sans-serif;
 }
 
 .login-box{
 background:white;
 padding:40px;
-border-radius:15px;
 width:350px;
+border-radius:15px;
 box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+h2{
+color:#002b7f;
+margin-bottom:20px;
+text-align:center;
 }
 
 input{
@@ -37,30 +44,55 @@ color:white;
 border:none;
 border-radius:8px;
 cursor:pointer;
+font-weight:600;
 }
+
 </style>
 </head>
+  
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  
+<body>
+
+<div class="login-box">
+
+<h2>FM Logistic Portal</h2>
+
+<input type="email" id="email" placeholder="Enter Email">
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<button onclick="login()">Login</button>
+
+</div>
+
+<!-- STEP 1 -->
+
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 
+<!-- STEP 2 : PASTE HERE -->
+
 <script>
 
 const firebaseConfig = {
-
 apiKey:"AIzaSyDghYujwS8c8g-wolAklzLufF_j2qzEyDc",
-
 authDomain:"xphther.firebaseapp.com",
-
 projectId:"xphther",
-
 storageBucket:"xphther.firebasestorage.app",
-
-messagingSenderId:"1:771665767472:web:a1a857d5589de4c38a51f5",
-
-appId:"G-6C2LGY5YJ6"
-
+messagingSenderId:"771665767472",
+appId:"1:771665767472:web:a1a857d5589de4c38a51f5"
 };
+
+firebase.initializeApp(firebaseConfig);
+
+</script>
+
+<!-- STEP 3 : LOGIN FUNCTION -->
+
 <script>
 
 function login(){
@@ -90,16 +122,5 @@ alert(error.message);
 
 </script>
 
-<div class="login-box">
-
-<h2>FM Portal Login</h2>
-
-<input type="email" id="email" placeholder="Email">
-
-<input type="password" id="password" placeholder="Password">
-
-<button onclick="login()">
-Login
-</button>
-
-</div>
+</body>
+</html>
