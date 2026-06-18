@@ -66,6 +66,13 @@ font-weight:600;
 
 <button onclick="login()">Login</button>
 
+<p style="text-align:center;margin-top:15px;">
+<a href="#" onclick="resetPassword()"
+style="color:#002b7f;text-decoration:none;">
+Forgot Password?
+</a>
+</p>
+
 </div>
 
 <!-- STEP 1 -->
@@ -109,6 +116,36 @@ firebase.auth()
 .then(function(){
 
 window.location.href="dashboard.html";
+
+})
+
+.catch(function(error){
+
+alert(error.message);
+
+});
+
+}
+
+function resetPassword(){
+
+const email =
+document.getElementById("email").value;
+
+if(email===""){
+
+alert("Please enter your email address first.");
+
+return;
+
+}
+
+firebase.auth()
+.sendPasswordResetEmail(email)
+
+.then(function(){
+
+alert("Password reset link has been sent to your email.");
 
 })
 
