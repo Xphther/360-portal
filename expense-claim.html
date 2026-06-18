@@ -33,7 +33,8 @@ color:#666;
 }
 
 .expense-container{
-max-width:1000px;
+width:100%;
+max-width:1400px;
 margin:auto;
 }
 
@@ -149,6 +150,33 @@ font-size:14px;
 height:100px;
 resize:none;
 }
+.draft-btn{
+padding:12px 25px;
+border:none;
+border-radius:8px;
+background:#eef4ff;
+color:#002b7f;
+font-weight:600;
+cursor:pointer;
+}
+
+.submit-btn{
+padding:12px 25px;
+border:none;
+border-radius:8px;
+background:#002b7f;
+color:white;
+font-weight:600;
+cursor:pointer;
+}
+
+.draft-btn:hover{
+background:#dbe9ff;
+}
+
+.submit-btn:hover{
+opacity:.9;
+}
 </style>
 </head>
 
@@ -190,12 +218,12 @@ OCR extraction will be performed automatically after upload.
 
 <div class="status-card">
 <span>Status</span>
-<b>No Receipt Uploaded</b>
+<b id="uploadStatus">No Receipt Uploaded</b>
 </div>
 
 <div class="status-card">
 <span>OCR Status</span>
-<b>Pending</b>
+<b id="ocrStatus">Pending</b>
 </div>
 
 </div>
@@ -234,7 +262,7 @@ Enter expense information for reimbursement processing.
 
 <div class="form-group">
 <label>Amount</label>
-<input type="number" placeholder="Enter Amount">
+<input type="number" id="claimAmount" placeholder="Enter Amount">
 </div>
 
 <div class="form-group">
@@ -257,6 +285,76 @@ Enter expense information for reimbursement processing.
 </div>
 
 </div>
+<div class="expense-card" style="margin-top:20px;">
 
+<div class="section-header">
+<h2>Claim Summary</h2>
+<span class="step-badge">Step 3 of 3</span>
+</div>
+
+<p class="section-desc">
+Review details before submitting your expense claim.
+</p>
+
+<div class="receipt-status">
+
+<div class="status-card">
+<span>Claim Status</span>
+<b>Draft</b>
+</div>
+
+<div class="status-card">
+<span>Total Amount</span>
+<b id="totalAmount">₹0</b>
+</div>
+
+<div class="status-card">
+<span>Approval Flow</span>
+<b>Manager → Finance</b>
+</div>
+
+</div>
+
+<div style="margin-top:25px;display:flex;gap:15px;justify-content:flex-end;">
+
+<button class="draft-btn">
+Save Draft
+</button>
+
+<button class="submit-btn">
+Submit Claim
+</button>
+
+</div>
+
+</div>
+
+</div>
+<script>
+
+document.getElementById("claimAmount").addEventListener("input", function(){
+
+let amount = this.value || 0;
+
+document.getElementById("totalAmount").innerHTML =
+"₹" + Number(amount).toLocaleString("en-IN");
+
+});
+
+document.getElementById("receiptUpload").addEventListener("change", function(){
+
+if(this.files.length > 0){
+
+document.getElementById("uploadStatus").innerHTML =
+this.files[0].name;
+
+document.getElementById("ocrStatus").innerHTML =
+"Ready for OCR";
+
+}
+
+});
+
+</script>
 </body>
 </html>
