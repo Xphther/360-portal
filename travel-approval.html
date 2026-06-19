@@ -1,25 +1,407 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Travel Approval</title>
+
+<title>Travel Approval Letter</title>
+
+  <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#eef4ff;
+padding:30px;
+}
+
+.approval-container{
+width:100%;
+max-width:1400px;
+margin:auto;
+background:#fff;
+padding:35px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.approval-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding-bottom:20px;
+border-bottom:1px solid #e5edf9;
+margin-bottom:25px;
+}
+
+.approval-header h1{
+color:#002b7f;
+margin-bottom:5px;
+}
+
+.approval-header p{
+color:#666;
+}
+
+.approval-badge{
+background:#dff7e4;
+color:#1a7f37;
+padding:14px 30px;
+border-radius:30px;
+font-size:16px;
+font-weight:700;
+letter-spacing:1px;
+}
+.document-info{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-bottom:30px;
+}
+
+.info-card{
+background:#f8fbff;
+border:1px solid #d8e4ff;
+padding:18px;
+border-radius:12px;
+}
+
+.info-card span{
+display:block;
+font-size:12px;
+color:#666;
+margin-bottom:5px;
+}
+
+.section{
+margin-top:25px;
+}
+
+.section h2{
+color:#002b7f;
+margin-bottom:15px;
+font-size:20px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:#fff;
+}
+
+td{
+padding:14px;
+border:1px solid #e5edf9;
+}
+
+td:first-child{
+width:250px;
+font-weight:600;
+background:#f8fbff;
+color:#002b7f;
+}
+
+.approval-note{
+margin-top:25px;
+padding:20px;
+background:#f8fbff;
+border-left:5px solid #002b7f;
+border-radius:8px;
+line-height:1.6;
+}
+
+.signature-section{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+margin-top:25px;
+}
+
+.sign-card{
+padding:20px;
+border:1px solid #d8e4ff;
+border-radius:12px;
+background:#f8fbff;
+}
+
+.sign-card span{
+display:block;
+font-size:12px;
+color:#666;
+margin-bottom:8px;
+}
+
+.sign-card h3{
+color:#002b7f;
+margin-bottom:5px;
+}
+
+.sign-card p{
+color:#666;
+}
+
+.action-bar{
+display:flex;
+justify-content:flex-end;
+gap:15px;
+margin-top:30px;
+padding-top:20px;
+border-top:1px solid #e5edf9;
+}
+
+.print-btn{
+padding:12px 25px;
+border:none;
+border-radius:8px;
+background:#eef4ff;
+color:#002b7f;
+font-weight:600;
+cursor:pointer;
+}
+
+.download-btn{
+padding:12px 25px;
+border:none;
+border-radius:8px;
+background:#002b7f;
+color:white;
+font-weight:600;
+cursor:pointer;
+}
+
+.print-btn:hover{
+background:#dbe9ff;
+}
+
+.download-btn:hover{
+opacity:.9;
+}
+.timeline{
+display:flex;
+justify-content:space-between;
+margin-top:25px;
+padding:20px;
+background:#f8fbff;
+border:1px solid #d8e4ff;
+border-radius:12px;
+}
+
+.timeline-step{
+flex:1;
+text-align:center;
+}
+
+.timeline-step .circle{
+width:35px;
+height:35px;
+border-radius:50%;
+background:#1a7f37;
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+font-weight:700;
+margin-bottom:10px;
+}
+</style>
+
 </head>
+
 <body>
 
-<h2>Travel Approval Letter</h2>
+<div class="approval-container">
 
-<p><strong>Employee:</strong> Nidhi Gajjar</p>
-<p><strong>Employee ID:</strong> EMP001</p>
-<p><strong>Travel Type:</strong> Flight</p>
-<p><strong>From:</strong> Mumbai</p>
-<p><strong>To:</strong> Bangalore</p>
+    <div class="approval-header">
 
-<p>
-This travel request has been approved by the reporting manager.
-</p>
+        <div>
+            <h1>Travel Approval Letter</h1>
+            <p>FM Logistic Travel Management System</p>
+        </div>
 
-<p>
-Approved By: Rahul Sharma
-</p>
+        <div class="approval-badge">
+            APPROVED
+        </div>
+
+    </div>
+<div class="section">
+
+<h2>Approval Timeline</h2>
+
+<div class="timeline">
+
+<div class="timeline-step">
+<div class="circle">✓</div>
+<p>Request Raised</p>
+</div>
+
+<div class="timeline-step">
+<div class="circle">✓</div>
+<p>Manager Approved</p>
+</div>
+
+<div class="timeline-step">
+<div class="circle">✓</div>
+<p>Finance Approved</p>
+</div>
+
+<div class="timeline-step">
+<div class="circle">✓</div>
+<p>Ticket Issued</p>
+</div>
+
+</div>
+
+</div>
+    <div class="document-info">
+
+        <div class="info-card">
+            <span>Request ID</span>
+            <b>TRV-2026-00125</b>
+        </div>
+
+        <div class="info-card">
+            <span>Approval Date</span>
+            <b>19-Jun-2026</b>
+        </div>
+
+        <div class="info-card">
+            <span>Status</span>
+            <b>Approved</b>
+        </div>
+
+    </div>
+<div class="document-info">
+
+    <div class="info-card">
+        <span>Employee</span>
+        <b>Nidhi Gajjar</b>
+    </div>
+
+    <div class="info-card">
+        <span>Department</span>
+        <b>Operations</b>
+    </div>
+
+    <div class="info-card">
+        <span>Travel Type</span>
+        <b>Domestic Flight</b>
+    </div>
+
+    <div class="info-card">
+        <span>Journey Date</span>
+        <b>25-Jun-2026</b>
+    </div>
+
+    <div class="info-card">
+        <span>Total Cost</span>
+        <b>₹12,450</b>
+    </div>
+
+    <div class="info-card">
+        <span>Approval Level</span>
+        <b>Manager Approved</b>
+    </div>
+
+</div>
+    <div class="section">
+
+        <h2>Employee Information</h2>
+
+        <table>
+
+            <tr>
+                <td>Employee Name</td>
+                <td>Nidhi Gajjar</td>
+            </tr>
+
+            <tr>
+                <td>Employee ID</td>
+                <td>EMP001</td>
+            </tr>
+
+            <tr>
+                <td>Department</td>
+                <td>Operations</td>
+            </tr>
+
+            <tr>
+                <td>Location</td>
+                <td>Mumbai</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Travel Details</h2>
+
+        <table>
+
+            <tr>
+                <td>Travel Type</td>
+                <td>Flight</td>
+            </tr>
+
+            <tr>
+                <td>Origin</td>
+                <td>Mumbai</td>
+            </tr>
+
+            <tr>
+                <td>Destination</td>
+                <td>Bangalore</td>
+            </tr>
+
+            <tr>
+                <td>Purpose</td>
+                <td>Client Visit</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="approval-note">
+
+        This travel request has been reviewed and approved
+        as per FM Logistic travel policy.
+
+    </div>
+
+    <div class="signature-section">
+
+        <div class="sign-card">
+            <span>Approved By</span>
+            <h3>Rahul Sharma</h3>
+            <p>Reporting Manager</p>
+        </div>
+
+        <div class="sign-card">
+            <span>System Generated</span>
+            <h3>FM Travel Portal</h3>
+            <p>No Signature Required</p>
+        </div>
+
+    </div>
+<div class="action-bar">
+
+<button class="print-btn" onclick="window.print()">
+Print Letter
+</button>
+
+<button class="download-btn">
+Download PDF
+</button>
+</div>
+  
+</div>
 
 </body>
+
 </html>
