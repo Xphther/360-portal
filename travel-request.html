@@ -22,7 +22,7 @@ font-family:'Segoe UI',sans-serif;
 
 body{
 min-height:100vh;
-padding:30px;
+padding:5px;
 overflow-x:hidden;
 background:
 radial-gradient(circle at 10% 20%, rgba(239,43,45,.08), transparent 25%),
@@ -30,7 +30,6 @@ radial-gradient(circle at 90% 10%, rgba(0,43,127,.10), transparent 25%),
 linear-gradient(135deg,#eef4ff,#ffffff);
 position:relative;
 }
-
 body::before{
 content:'';
 position:fixed;
@@ -70,8 +69,10 @@ z-index:-1;
 }
 
 .container{
-max-width:1400px;
-margin:auto;
+width:100%;
+max-width:100%;
+margin:0;
+padding:5px;
 }
 
 .top-bar{
@@ -101,10 +102,11 @@ font-weight:600;
 
 .header-card{
 background:white;
-padding:30px;
+padding:25px;
 border-radius:20px;
 margin-bottom:25px;
 box-shadow:0 15px 40px rgba(0,0,0,.08);
+width:100%;
 }
 
 .header-card h1{
@@ -118,6 +120,7 @@ padding:25px;
 border-radius:20px;
 margin-bottom:20px;
 box-shadow:0 10px 30px rgba(0,0,0,.06);
+width:100%;
 }
 
 .section-title{
@@ -129,8 +132,9 @@ margin-bottom:20px;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(5,1fr);
 gap:20px;
+width:100%;
 }
 
 .field{
@@ -147,11 +151,11 @@ margin-bottom:8px;
 input,
 select,
 textarea{
-padding:12px;
+padding:10px;
 border:1px solid #d9d9d9;
 border-radius:10px;
+width:100%;
 }
-
 textarea{
 height:140px;
 resize:none;
@@ -220,7 +224,15 @@ box-shadow:0 10px 25px rgba(0,43,127,.15);
 transform:translateY(-3px) scale(1.02);
 box-shadow:0 15px 30px rgba(0,43,127,.25);
 }
-@media(max-width:900px){
+@media(max-width:1200px){
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
 
 .grid{
 grid-template-columns:1fr;
