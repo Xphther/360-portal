@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Purchase Request Details</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#eef4ff;
+padding:20px;
+}
+
+.container{
+width:100%;
+background:#fff;
+padding:30px;
+border-radius:12px;
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.header h1{
+color:#002b7f;
+}
+
+.status{
+background:#fff4d6;
+color:#996c00;
+padding:10px 20px;
+border-radius:20px;
+font-weight:600;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:25px;
+}
+
+.card{
+background:#f8fbff;
+border:1px solid #d8e4ff;
+padding:15px;
+border-radius:10px;
+}
+
+.card span{
+font-size:12px;
+color:#666;
+display:block;
+margin-bottom:5px;
+}
+
+.section{
+margin-top:20px;
+}
+
+.section h2{
+color:#002b7f;
+margin-bottom:10px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+td{
+padding:12px;
+border:1px solid #e5edf9;
+}
+
+td:first-child{
+width:250px;
+background:#f8fbff;
+font-weight:600;
+}
+
+.action-bar{
+margin-top:25px;
+display:flex;
+gap:10px;
+}
+
+.btn{
+padding:12px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+}
+
+.approve{
+background:#198754;
+color:#fff;
+}
+
+.reject{
+background:#dc3545;
+color:#fff;
+}
+
+.back{
+background:#002b7f;
+color:#fff;
+}
+
+</style>
+
+<script>
+
+function approvePR(){
+alert("Purchase Request Approved");
+}
+
+function rejectPR(){
+alert("Purchase Request Rejected");
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<div>
+<h1>Purchase Request Details</h1>
+<p>FM Logistic Procurement Management System</p>
+</div>
+
+<div class="status">
+Pending Approval
+</div>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<span>PR Number</span>
+<b>PR-2026-001</b>
+</div>
+
+<div class="card">
+<span>Requester</span>
+<b>Nidhi Gajjar</b>
+</div>
+
+<div class="card">
+<span>Department</span>
+<b>Operations</b>
+</div>
+
+<div class="card">
+<span>Amount</span>
+<b>₹25,000</b>
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Purchase Information</h2>
+
+<table>
+
+<tr>
+<td>Vendor Name</td>
+<td>ABC Technologies</td>
+</tr>
+
+<tr>
+<td>Item Description</td>
+<td>Laptop Purchase</td>
+</tr>
+
+<tr>
+<td>Quantity</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>Total Amount</td>
+<td>₹25,000</td>
+</tr>
+
+<tr>
+<td>Business Justification</td>
+<td>Required for new employees onboarding.</td>
+</tr>
+
+<tr>
+<td>Requested Date</td>
+<td>23-Jun-2026</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>Approval Workflow</h2>
+
+<table>
+
+<tr>
+<td>Requester</td>
+<td>Nidhi Gajjar</td>
+</tr>
+
+<tr>
+<td>Manager Approval</td>
+<td>Pending</td>
+</tr>
+
+<tr>
+<td>Finance Approval</td>
+<td>Pending</td>
+</tr>
+
+<tr>
+<td>PO Creation</td>
+<td>Not Started</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="action-bar">
+
+<button class="btn approve" onclick="approvePR()">
+Approve
+</button>
+
+<button class="btn reject" onclick="rejectPR()">
+Reject
+</button>
+
+<button class="btn back" onclick="window.location.href='purchase-approval.html'">
+Back
+</button>
+
+</div>
+
+</div>
+
+</body>
+</html>
