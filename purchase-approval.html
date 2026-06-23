@@ -169,89 +169,52 @@ cursor:pointer;
 
 <tbody>
 
-<tr class="clickable-row" onclick="openPR('PR-2026-001')">
-
+<tr onclick="openPR('PR-2026-001')" style="cursor:pointer;">
 <td>PR-2026-001</td>
 <td>Nidhi Gajjar</td>
 <td>Operations</td>
 <td>ABC Technologies</td>
 <td>₹25,000</td>
-
-<td id="status1">
+<td>
 <span style="background:#fff4d6;padding:6px 12px;border-radius:20px;color:#996c00;">
 Pending
 </span>
 </td>
-
 <td>
-
-<button class="view-btn"
-onclick="event.stopPropagation();openPR('PR-2026-001')">
-View
-</button>
-
-<button class="approve-btn"
-onclick="event.stopPropagation();approveRow('status1')">
-Approve
-</button>
-
-<button class="reject-btn"
-onclick="event.stopPropagation();rejectRow('status1')">
-Reject
-</button>
-
+<button onclick="event.stopPropagation();openPR('PR-2026-001')">View</button>
 </td>
-
 </tr>
 
-<tr class="clickable-row" onclick="openPR('PR-2026-002')">
-
+<tr onclick="openPR('PR-2026-002')" style="cursor:pointer;">
 <td>PR-2026-002</td>
 <td>Rahul Sharma</td>
 <td>Finance</td>
 <td>XYZ Office Supplies</td>
 <td>₹18,500</td>
-
 <td>
 <span style="background:#dff7e4;padding:6px 12px;border-radius:20px;color:#1a7f37;">
 Approved
 </span>
 </td>
-
 <td>
-
-<button class="view-btn"
-onclick="event.stopPropagation();openPR('PR-2026-002')">
-View
-</button>
-
+<button onclick="event.stopPropagation();openPR('PR-2026-002')">View</button>
 </td>
-
 </tr>
 
-<tr class="clickable-row" onclick="openPR('PR-2026-003')">
-
+<tr onclick="openPR('PR-2026-003')" style="cursor:pointer;">
 <td>PR-2026-003</td>
 <td>Amit Patel</td>
 <td>Warehouse</td>
 <td>Tech Systems</td>
 <td>₹42,000</td>
-
 <td>
 <span style="background:#ffe1e1;padding:6px 12px;border-radius:20px;color:#c62828;">
 Rejected
 </span>
 </td>
-
 <td>
-
-<button class="view-btn"
-onclick="event.stopPropagation();openPR('PR-2026-003')">
-View
-</button>
-
+<button onclick="event.stopPropagation();openPR('PR-2026-003')">View</button>
 </td>
-
 </tr>
 
 </tbody>
@@ -265,16 +228,6 @@ View
 function openPR(prNumber){
 window.location.href =
 "purchase-request-details.html?pr=" + prNumber;
-}
-
-function approveRow(id){
-document.getElementById(id).innerHTML =
-'<span style="background:#dff7e4;padding:6px 12px;border-radius:20px;color:#1a7f37;">Approved</span>';
-}
-
-function rejectRow(id){
-document.getElementById(id).innerHTML =
-'<span style="background:#ffe1e1;padding:6px 12px;border-radius:20px;color:#c62828;">Rejected</span>';
 }
 
 </script>
