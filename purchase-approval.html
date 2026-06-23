@@ -217,7 +217,7 @@ font-weight:600;
 
 <tbody>
 
-<tr>
+<tr onclick="openPR('PR-2026-001')" style="cursor:pointer;">
 
 <td>PR-2026-001</td>
 <td>Nidhi Gajjar</td>
@@ -233,44 +233,19 @@ Pending
 
 <td>
 
-<button onclick="window.location.href='purchase-details.html'"
-style="padding:8px 15px;border:none;border-radius:6px;background:#eef4ff;color:#002b7f;cursor:pointer;">
+<button onclick="event.stopPropagation();openPR('PR-2026-001')"
+style="padding:8px 15px;border:none;border-radius:6px;background:#eef4ff;color:#002b7f;">
 View
 </button>
 
-<button onclick="approveRow('status1',this)"
-style="padding:8px 15px;border:none;border-radius:6px;background:#198754;color:#fff;cursor:pointer;">
+<button onclick="event.stopPropagation();approveRow('status1',this)"
+style="padding:8px 15px;border:none;border-radius:6px;background:#198754;color:#fff;">
 Approve
 </button>
 
-<button onclick="rejectRow('status1',this)"
-style="padding:8px 15px;border:none;border-radius:6px;background:#dc3545;color:#fff;cursor:pointer;">
+<button onclick="event.stopPropagation();rejectRow('status1',this)"
+style="padding:8px 15px;border:none;border-radius:6px;background:#dc3545;color:#fff;">
 Reject
-</button>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>PR-2026-002</td>
-<td>Rahul Sharma</td>
-<td>Finance</td>
-<td>XYZ Office Supplies</td>
-<td>₹18,500</td>
-
-<td>
-<span style="background:#dff7e4;padding:6px 12px;border-radius:20px;color:#1a7f37;font-size:13px;">
-Approved
-</span>
-</td>
-
-<td>
-
-<button onclick="alert('Opening PR-2026-002')"
-style="padding:8px 15px;border:none;border-radius:6px;background:#eef4ff;color:#002b7f;cursor:pointer;">
-View
 </button>
 
 </td>
@@ -345,23 +320,10 @@ View
 </div>
 <script>
 
-function approveRow(statusId,btn){
+function openPR(prNumber){
 
-document.getElementById(statusId).innerHTML=
-'<span style="background:#dff7e4;padding:6px 12px;border-radius:20px;color:#1a7f37;font-size:13px;">Approved</span>';
-
-btn.parentElement.innerHTML=
-'<button style="padding:8px 15px;border:none;border-radius:6px;background:#eef4ff;color:#002b7f;">View</button>';
-
-}
-
-function rejectRow(statusId,btn){
-
-document.getElementById(statusId).innerHTML=
-'<span style="background:#ffe1e1;padding:6px 12px;border-radius:20px;color:#c62828;font-size:13px;">Rejected</span>';
-
-btn.parentElement.innerHTML=
-'<button style="padding:8px 15px;border:none;border-radius:6px;background:#eef4ff;color:#002b7f;">View</button>';
+window.location.href =
+"purchase-request-details.html?pr=" + prNumber;
 
 }
 
